@@ -1,0 +1,5 @@
+Qual o tipo de arquivo mais baixado?
+Qual o Autor de livro favorito dos clientes?
+Qual A taxa de Downloads durante feriados e finais de semana?
+Qual A taxa de Downloads durante dias úteis?
+Qual Genero de filme mais baixado?
