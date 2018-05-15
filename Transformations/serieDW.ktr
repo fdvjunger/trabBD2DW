@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>livroDW</name>
+    <name>serieDW</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,16 +427,16 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/05/14 02:31:52.883</created_date>
+    <created_date>2018/05/15 12:14:07.371</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/05/14 02:31:52.883</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2018/05/15 12:14:07.371</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>dw-livro</name>
+    <name>DW - Serie</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -487,7 +487,7 @@
     </attributes>
   </connection>
   <connection>
-    <name>Livro-DW</name>
+    <name>Serie - DW</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -539,13 +539,13 @@
   </connection>
   <order>
     <hop>
-      <from>Livro input</from>
-      <to>Livro output</to>
+      <from>Serie input</from>
+      <to>Serie output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Livro input</name>
+    <name>Serie input</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -555,14 +555,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Livro-DW</connection>
+    <connection>Serie - DW</connection>
     <sql>SELECT
-  id_livro
-, titulo_do_livro
-, edicao
-, autor
-, editora
-FROM livroview
+  id_serie
+, titulo_da_serie
+, produtora
+FROM serieview
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -577,13 +575,13 @@ FROM livroview
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
-      <yloc>32</yloc>
+      <xloc>544</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Livro output</name>
+    <name>Serie output</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -593,9 +591,9 @@ FROM livroview
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dw-livro</connection>
+    <connection>DW - Serie</connection>
     <schema/>
-    <table>livro</table>
+    <table>serie</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -612,24 +610,16 @@ FROM livroview
     <return_field/>
     <fields>
       <field>
-        <column_name>id_livro</column_name>
-        <stream_name>id_livro</stream_name>
+        <column_name>id_serie</column_name>
+        <stream_name>id_serie</stream_name>
       </field>
       <field>
         <column_name>nome</column_name>
-        <stream_name>titulo_do_livro</stream_name>
+        <stream_name>titulo_da_serie</stream_name>
       </field>
       <field>
-        <column_name>edicao</column_name>
-        <stream_name>edicao</stream_name>
-      </field>
-      <field>
-        <column_name>autor</column_name>
-        <stream_name>autor</stream_name>
-      </field>
-      <field>
-        <column_name>editora</column_name>
-        <stream_name>editora</stream_name>
+        <column_name>produtora</column_name>
+        <stream_name>produtora</stream_name>
       </field>
     </fields>
     <cluster_schema/>
@@ -640,8 +630,8 @@ FROM livroview
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>32</yloc>
+      <xloc>848</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>livroDW</name>
+    <name>DownloadsDW</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,67 +427,16 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2018/05/14 02:31:52.883</created_date>
+    <created_date>2018/05/15 12:27:17.545</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2018/05/14 02:31:52.883</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2018/05/15 12:27:17.545</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>dw-livro</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>CentralDW</database>
-    <port>5432</port>
-    <username>postgres</username>
-    <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>Livro-DW</name>
+    <name>Downloads-DW</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
     <access>Native</access>
@@ -537,15 +486,66 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>DW-Downloads</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>CentralDW</database>
+    <port>5432</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
-      <from>Livro input</from>
-      <to>Livro output</to>
+      <from>Downloads input</from>
+      <to>Downloads output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Livro input</name>
+    <name>Downloads input</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -555,14 +555,15 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Livro-DW</connection>
+    <connection>Downloads-DW</connection>
     <sql>SELECT
-  id_livro
-, titulo_do_livro
-, edicao
-, autor
-, editora
-FROM livroview
+  id_download
+, id_livro
+, id_filme
+, id_prog
+, id_serie
+, email
+FROM downloadview
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -583,7 +584,7 @@ FROM livroview
     </GUI>
   </step>
   <step>
-    <name>Livro output</name>
+    <name>Downloads output</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -593,9 +594,9 @@ FROM livroview
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dw-livro</connection>
+    <connection>DW-Downloads</connection>
     <schema/>
-    <table>livro</table>
+    <table>Downloads</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -612,24 +613,28 @@ FROM livroview
     <return_field/>
     <fields>
       <field>
+        <column_name>id_download</column_name>
+        <stream_name>id_download</stream_name>
+      </field>
+      <field>
         <column_name>id_livro</column_name>
         <stream_name>id_livro</stream_name>
       </field>
       <field>
-        <column_name>nome</column_name>
-        <stream_name>titulo_do_livro</stream_name>
+        <column_name>id_filme</column_name>
+        <stream_name>id_filme</stream_name>
       </field>
       <field>
-        <column_name>edicao</column_name>
-        <stream_name>edicao</stream_name>
+        <column_name>id_prog</column_name>
+        <stream_name>id_prog</stream_name>
       </field>
       <field>
-        <column_name>autor</column_name>
-        <stream_name>autor</stream_name>
+        <column_name>id_serie</column_name>
+        <stream_name>id_serie</stream_name>
       </field>
       <field>
-        <column_name>editora</column_name>
-        <stream_name>editora</stream_name>
+        <column_name>email</column_name>
+        <stream_name>email</stream_name>
       </field>
     </fields>
     <cluster_schema/>
@@ -640,7 +645,7 @@ FROM livroview
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>848</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>

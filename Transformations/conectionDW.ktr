@@ -583,8 +583,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>288</yloc>
+      <xloc>768</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -620,8 +620,8 @@ FROM clienteview
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>288</yloc>
+      <xloc>496</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
