@@ -541,12 +541,12 @@
   <order>
     <hop>
       <from>cliente input</from>
-      <to>Table output</to>
+      <to>Cliente output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Table output</name>
+    <name>Cliente output</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
