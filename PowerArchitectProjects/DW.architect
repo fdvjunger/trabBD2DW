@@ -4,7 +4,7 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
-   <property key="Logical" value="PlayPen Database" />
+   <property key="Logical" value="Modelo de Dados" />
   </data-source>
  </project-data-sources>
  <source-databases>
@@ -281,7 +281,226 @@
  <profiles topNCount="10">
   </profiles>
   <olap>
+   <olap-session id="0" db-ref="ppdb">
+    <Schema id="1" name="New OLAP Schema"/>
+   </olap-session>
+   <olap-session id="2" db-ref="ppdb">
+    <Schema id="3" name="New OLAP Schema">
+     <Dimension id="4" name="Cliente" type="StandardDimension">
+      <Hierarchy id="5" name="id" hasAll="true" allLevelName="All" primaryKey="nome" caption="4">
+       <Table id="6" name="Cliente"/>
+       <Level id="7" name="New Level 1" column="email" uniqueMembers="false">
+        <Property id="8" name="Email" column="email"/>
+        <Property id="9" name="Nome" column="nome"/>
+        <Property id="10" name="Endereco" column="endereco"/>
+        <Property id="11" name="Ip" column="ip"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="12" name="Serie" type="StandardDimension" caption="1">
+      <Hierarchy id="13" name="id" hasAll="true" allLevelName="All" primaryKey="id_serie">
+       <Table id="14" name="serie"/>
+       <Level id="15" name="New Level 1" column="id_serie" uniqueMembers="false">
+        <Property id="16" name="Id Serie" column="id_serie"/>
+        <Property id="17" name="Produtora" column="produtora"/>
+        <Property id="18" name="Nome" column="nome"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="19" name="Filme" type="StandardDimension">
+      <Hierarchy id="20" name="id" hasAll="true" allLevelName="All" primaryKey="id_filme" caption="2">
+       <Table id="21" name="Filme"/>
+       <Level id="22" name="New Level 1" column="id_filme" uniqueMembers="false">
+        <Property id="23" name="Id Filme" column="id_filme"/>
+        <Property id="24" name="Nome" column="nome"/>
+        <Property id="25" name="Genero" column="genero"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="26" name="Programas" type="StandardDimension">
+      <Hierarchy id="27" name="id" hasAll="true" allLevelName="All" primaryKey="id_prog" caption="3">
+       <Table id="28" name="Programas"/>
+       <Level id="29" name="New Level 1" column="id_prog" uniqueMembers="false">
+        <Property id="30" name="Id Prog" column="id_prog"/>
+        <Property id="31" name="Nome" column="nome"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="32" name="Livro" type="StandardDimension">
+      <Hierarchy id="33" name="id" hasAll="true" allLevelName="All" primaryKey="id_livro" caption="5">
+       <Table id="34" name="Livro"/>
+       <Level id="35" name="New Level 1" column="id_livro" uniqueMembers="false">
+        <Property id="36" name="Id Livro" column="id_livro"/>
+        <Property id="37" name="Nome" column="nome"/>
+        <Property id="38" name="Edicão" column="edicão"/>
+        <Property id="39" name="Autor" column="autor"/>
+        <Property id="40" name="Editora" column="editora"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="41" name="Data" type="StandardDimension">
+      <Hierarchy id="42" name="id" hasAll="true" allLevelName="All" primaryKey="id_download" caption="6">
+       <Table id="43" name="Data"/>
+       <Level id="44" name="New Level 1" column="id_download" uniqueMembers="false">
+        <Property id="45" name="Id Download" column="id_download"/>
+        <Property id="46" name="Diasemanan" column="diasemanan"/>
+        <Property id="47" name="Diames" column="diames"/>
+        <Property id="48" name="Mes" column="mes"/>
+        <Property id="49" name="Ano" column="ano"/>
+        <Property id="50" name="Diasemana" column="diasemana"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Cube id="51" name="Downloads">
+      <Table id="52" name="Downloads"/>
+      <DimensionUsage id="53" source="Filme" name="Filme" caption="2" foreignKey="id_serie"/>
+      <DimensionUsage id="54" source="Programas" name="Programas" caption="3" foreignKey="id_prog"/>
+      <DimensionUsage id="55" source="Cliente" name="Cliente" caption="4" foreignKey="email"/>
+      <DimensionUsage id="56" source="Livro" name="Livro" caption="5" foreignKey="id_livro"/>
+      <DimensionUsage id="57" source="Data" name="Data" caption="6" foreignKey="id_download"/>
+      <DimensionUsage id="58" source="Serie" name="Serie" caption="1" foreignKey="id_serie"/>
+     </Cube>
+    </Schema>
+   </olap-session>
+   <olap-session id="59" db-ref="ppdb">
+    <Schema id="60" name="New OLAP Schema">
+     <Dimension id="61" name="Cliente" type="StandardDimension">
+      <Hierarchy id="62" name="email" hasAll="true" allLevelName="All" primaryKey="email" caption="4">
+       <Table id="63" name="Cliente"/>
+       <Level id="64" name="nome" column="nome" uniqueMembers="false">
+        <Property id="65" name="Nome" column="nome"/>
+       </Level>
+       <Level id="66" name="endereco" column="endereco" uniqueMembers="false">
+        <Property id="67" name="Endereco" column="endereco"/>
+       </Level>
+       <Level id="68" name="ip" column="ip" uniqueMembers="false">
+        <Property id="69" name="Ip" column="ip"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="70" name="Serie" type="StandardDimension" caption="1">
+      <Hierarchy id="71" name="id_serie" hasAll="true" allLevelName="All" primaryKey="id_serie">
+       <Table id="72" name="serie"/>
+       <Level id="73" name="produtora" column="produtora" uniqueMembers="false">
+        <Property id="74" name="Produtora" column="produtora"/>
+       </Level>
+       <Level id="75" name="nome" column="nome" uniqueMembers="false">
+        <Property id="76" name="Nome" column="nome"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="77" name="Filme" type="StandardDimension">
+      <Hierarchy id="78" name="id_filme" hasAll="true" allLevelName="All" primaryKey="id_filme" caption="2">
+       <Table id="79" name="Filme"/>
+       <Level id="80" name="nome" column="nome" uniqueMembers="false">
+        <Property id="81" name="Nome" column="nome"/>
+       </Level>
+       <Level id="82" name="genero" column="genero" uniqueMembers="false">
+        <Property id="83" name="Genero" column="genero"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="84" name="Programas" type="StandardDimension">
+      <Hierarchy id="85" name="id_prog" hasAll="true" allLevelName="All" primaryKey="id_prog" caption="3">
+       <Table id="86" name="Programas"/>
+       <Level id="87" name="nome" column="nome" uniqueMembers="false">
+        <Property id="88" name="Nome" column="nome"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="89" name="Livro" type="StandardDimension">
+      <Hierarchy id="90" name="id_livro" hasAll="true" allLevelName="All" primaryKey="id_livro" caption="5">
+       <Table id="91" name="Livro"/>
+       <Level id="92" name="nome" column="nome" uniqueMembers="false">
+        <Property id="93" name="Nome" column="nome"/>
+       </Level>
+       <Level id="94" name="edicao" column="edicão" uniqueMembers="false">
+        <Property id="95" name="Edicão" column="edicão"/>
+       </Level>
+       <Level id="96" name="autor" column="autor" uniqueMembers="false">
+        <Property id="97" name="Autor" column="autor"/>
+       </Level>
+       <Level id="98" name="editora" column="editora" uniqueMembers="false">
+        <Property id="99" name="Editora" column="editora"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Dimension id="100" name="Data" type="StandardDimension">
+      <Hierarchy id="101" name="id" hasAll="true" allLevelName="All" primaryKey="id_download" caption="6">
+       <Table id="102" name="Data"/>
+       <Level id="103" name="diasemanan" column="id_download" uniqueMembers="false">
+        <Property id="104" name="Diasemanan" column="diasemanan"/>
+       </Level>
+       <Level id="105" name="diames" column="diames" uniqueMembers="false">
+        <Property id="106" name="Diames" column="diames"/>
+       </Level>
+       <Level id="107" name="mes" column="mes" uniqueMembers="true">
+        <Property id="108" name="Mes" column="mes"/>
+       </Level>
+       <Level id="109" name="ano" column="ano" uniqueMembers="false">
+        <Property id="110" name="Ano" column="ano"/>
+       </Level>
+       <Level id="111" name="diasemana" column="diasemana" uniqueMembers="false">
+        <Property id="112" name="Diasemana" column="diasemana"/>
+       </Level>
+      </Hierarchy>
+     </Dimension>
+     <Cube id="113" name="Downloads">
+      <Table id="114" name="Downloads"/>
+      <DimensionUsage id="115" source="Filme" name="Filme" caption="2" foreignKey="id_serie"/>
+      <DimensionUsage id="116" source="Programas" name="Programas" caption="3" foreignKey="id_prog"/>
+      <DimensionUsage id="117" source="Cliente" name="Cliente" caption="4" foreignKey="email"/>
+      <DimensionUsage id="118" source="Livro" name="Livro" caption="5" foreignKey="id_livro"/>
+      <DimensionUsage id="119" source="Data" name="Data" caption="6" foreignKey="id_download"/>
+      <DimensionUsage id="120" source="Serie" name="Serie" caption="1" foreignKey="id_serie"/>
+      <Measure id="121" name="programas" column="id_prog" aggregator="sum"/>
+      <Measure id="122" name="livors" column="id_livro" aggregator="sum"/>
+      <Measure id="123" name="filmes" column="id_filme" aggregator="sum"/>
+      <Measure id="124" name="series" column="id_serie" aggregator="sum"/>
+      <Measure id="125" name="clientes" column="email" aggregator="sum"/>
+      <Measure id="126" name="datas" column="id_download" aggregator="sum"/>
+     </Cube>
+    </Schema>
+   </olap-session>
   </olap>
   <olap-gui>
+   <olap-edit-session osession-ref="0">
+    <play-pen zoom="1.0" viewportX="0" viewportY="0">
+    </play-pen>
+   </olap-edit-session>
+   <olap-edit-session osession-ref="2">
+    <play-pen zoom="1.0" viewportX="0" viewportY="0">
+     <cube-pane id="CP0" model-ref="51" x="288" y="153"/>
+     <dimension-pane id="DP1" model-ref="4" x="23" y="209"/>
+     <dimension-pane id="DP2" model-ref="12" x="44" y="41"/>
+     <dimension-pane id="DP3" model-ref="19" x="488" y="28"/>
+     <dimension-pane id="DP4" model-ref="26" x="277" y="24"/>
+     <dimension-pane id="DP5" model-ref="32" x="471" y="390"/>
+     <dimension-pane id="DP6" model-ref="41" x="149" y="368"/>
+     <usage-comp model-ref="53" pane1-ref="DP3" pane2-ref="CP0"/>
+     <usage-comp model-ref="54" pane1-ref="DP4" pane2-ref="CP0"/>
+     <usage-comp model-ref="55" pane1-ref="DP1" pane2-ref="CP0"/>
+     <usage-comp model-ref="56" pane1-ref="DP5" pane2-ref="CP0"/>
+     <usage-comp model-ref="57" pane1-ref="DP6" pane2-ref="CP0"/>
+     <usage-comp model-ref="58" pane1-ref="DP2" pane2-ref="CP0"/>
+    </play-pen>
+   </olap-edit-session>
+   <olap-edit-session osession-ref="59">
+    <play-pen zoom="1.0" viewportX="0" viewportY="0">
+     <dimension-pane id="DP7" model-ref="84" x="50" y="50"/>
+     <dimension-pane id="DP8" model-ref="89" x="166" y="50"/>
+     <dimension-pane id="DP9" model-ref="77" x="282" y="50"/>
+     <dimension-pane id="DP10" model-ref="100" x="398" y="50"/>
+     <dimension-pane id="DP11" model-ref="70" x="514" y="50"/>
+     <dimension-pane id="DP12" model-ref="61" x="630" y="50"/>
+     <cube-pane id="CP13" model-ref="113" x="334" y="233"/>
+     <usage-comp model-ref="120" pane1-ref="DP11" pane2-ref="CP13"/>
+     <usage-comp model-ref="119" pane1-ref="DP10" pane2-ref="CP13"/>
+     <usage-comp model-ref="118" pane1-ref="DP8" pane2-ref="CP13"/>
+     <usage-comp model-ref="117" pane1-ref="DP12" pane2-ref="CP13"/>
+     <usage-comp model-ref="116" pane1-ref="DP7" pane2-ref="CP13"/>
+     <usage-comp model-ref="115" pane1-ref="DP9" pane2-ref="CP13"/>
+    </play-pen>
+   </olap-edit-session>
   </olap-gui>
 </architect-project>

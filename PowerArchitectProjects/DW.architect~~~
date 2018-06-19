@@ -23,19 +23,19 @@
   <database id="DB0" populated="true" UUID="34dd5e71-441c-478e-ad95-2fb74518ddb8" dbcs-ref="DS2" name="CentralDW" physicalName="CentralDW" >
    <catalog id="CAT1" populated="true" UUID="ab045a3f-3ec9-4169-a919-1c8669ee5f85" name="CentralDW" nativeTerm="database" physicalName="CentralDW" >
     <schema id="SCH2" populated="true" UUID="a15f6b94-a91c-44ac-a34c-b772f99232c5" name="" nativeTerm="schema" physicalName="" >
-     <table id="TAB3" populated="true" UUID="7b401c36-0bd2-4dfe-b923-f96f9f58fae1" name="cliente" objectType="TABLE" physicalName="cliente" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table cliente" >
+     <table id="TAB3" populated="true" UUID="7b401c36-0bd2-4dfe-b923-f96f9f58fae1" name="cliente" objectType="TABLE" physicalName="cliente" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table cliente" >
       <remarks></remarks>
       <folder id="FOLTAB31" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL4" populated="true" UUID="c7475e8a-e859-4ee0-88fb-e1a320a6f4fd" autoIncrement="false" name="email" nullable="0" physicalName="email" precision="2147483647" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL4" populated="true" UUID="c7475e8a-e859-4ee0-88fb-e1a320a6f4fd" autoIncrement="false" defaultValue="" name="email" nullable="0" physicalName="email" precision="2147483647" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL5" populated="true" UUID="9c70ed6f-45e5-4ba4-9ec1-6f276227e59d" autoIncrement="false" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL5" populated="true" UUID="9c70ed6f-45e5-4ba4-9ec1-6f276227e59d" autoIncrement="false" defaultValue="" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL6" populated="true" UUID="c1e3302e-1aad-4680-8cc3-def5b94d5ae6" autoIncrement="false" name="endereco" nullable="1" physicalName="endereco" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL6" populated="true" UUID="c1e3302e-1aad-4680-8cc3-def5b94d5ae6" autoIncrement="false" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL7" populated="true" UUID="3af44390-4e58-48c7-87db-76ee1c5d4ec0" autoIncrement="false" name="ip" nullable="1" physicalName="ip" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL7" populated="true" UUID="3af44390-4e58-48c7-87db-76ee1c5d4ec0" autoIncrement="false" defaultValue="" name="ip" nullable="1" physicalName="ip" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -49,32 +49,32 @@
        </index>
       </folder>
      </table>
-     <table id="TAB10" populated="true" UUID="71b3ae34-94ad-4555-94e5-cbe9e4d3b975" name="data" objectType="TABLE" physicalName="data" sql-exception="java.lang.NullPointerException" >
+     <table id="TAB10" populated="true" UUID="71b3ae34-94ad-4555-94e5-cbe9e4d3b975" name="data" objectType="TABLE" physicalName="data" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: java.lang.NullPointerException" >
       <remarks></remarks>
       <folder id="FOLTAB101" populated="true" name="Columns" physicalName="Columns" type="1">
        <index id="IDX11" populated="true" UUID="93968fcd-26c1-431f-8b82-1200828f4bfe" clustered="false" name="data_pk" physicalName="data_pk" primaryKeyIndex="true" unique="false" >
        </index>
       </folder>
      </table>
-     <table id="TAB12" populated="true" UUID="9ed6dc25-7685-4a5f-97c2-d2f2003e4a30" name="downloads" objectType="TABLE" physicalName="downloads" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table downloads" >
+     <table id="TAB12" populated="true" UUID="9ed6dc25-7685-4a5f-97c2-d2f2003e4a30" name="downloads" objectType="TABLE" physicalName="downloads" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table downloads" >
       <remarks></remarks>
       <folder id="FOLTAB121" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL13" populated="true" UUID="80a95a2f-1e8f-432d-908d-012edc1c3d20" autoIncrement="false" name="id_download" nullable="0" physicalName="id_download" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL13" populated="true" UUID="80a95a2f-1e8f-432d-908d-012edc1c3d20" autoIncrement="false" defaultValue="" name="id_download" nullable="0" physicalName="id_download" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL14" populated="true" UUID="81e2fee8-8898-405f-9223-b20baa2aace0" autoIncrement="false" name="email" nullable="1" physicalName="email" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL14" populated="true" UUID="81e2fee8-8898-405f-9223-b20baa2aace0" autoIncrement="false" defaultValue="" name="email" nullable="1" physicalName="email" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL15" populated="true" UUID="f8a931c8-4602-4d64-b876-38f5b51a621f" autoIncrement="false" name="id_filme" nullable="1" physicalName="id_filme" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL15" populated="true" UUID="f8a931c8-4602-4d64-b876-38f5b51a621f" autoIncrement="false" defaultValue="" name="id_filme" nullable="1" physicalName="id_filme" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL16" populated="true" UUID="159ad3ff-7916-45be-9fef-07e0c7252fc0" autoIncrement="false" name="id_prog" nullable="1" physicalName="id_prog" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL16" populated="true" UUID="159ad3ff-7916-45be-9fef-07e0c7252fc0" autoIncrement="false" defaultValue="" name="id_prog" nullable="1" physicalName="id_prog" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL17" populated="true" UUID="a358535b-137b-4ad2-9baa-bc6db1ce13e5" autoIncrement="false" name="id_livro" nullable="1" physicalName="id_livro" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL17" populated="true" UUID="a358535b-137b-4ad2-9baa-bc6db1ce13e5" autoIncrement="false" defaultValue="" name="id_livro" nullable="1" physicalName="id_livro" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL18" populated="true" UUID="9617e5f6-b30c-493a-90c8-e041beeaad4e" autoIncrement="false" name="id_serie" nullable="1" physicalName="id_serie" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL18" populated="true" UUID="9617e5f6-b30c-493a-90c8-e041beeaad4e" autoIncrement="false" defaultValue="" name="id_serie" nullable="1" physicalName="id_serie" precision="20" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
        </folder>
@@ -88,19 +88,19 @@
        </index>
       </folder>
      </table>
-     <table id="TAB21" populated="true" UUID="744bb528-c574-4866-9d19-d30dd213fe11" name="filme" objectType="TABLE" physicalName="filme" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table filme" >
+     <table id="TAB21" populated="true" UUID="744bb528-c574-4866-9d19-d30dd213fe11" name="filme" objectType="TABLE" physicalName="filme" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table filme" >
       <remarks></remarks>
       <folder id="FOLTAB211" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL22" populated="true" UUID="c62a83e7-4854-4e54-bed1-feaf90007d41" autoIncrement="false" name="id_filme" nullable="0" physicalName="id_filme" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL22" populated="true" UUID="c62a83e7-4854-4e54-bed1-feaf90007d41" autoIncrement="false" defaultValue="" name="id_filme" nullable="0" physicalName="id_filme" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL23" populated="true" UUID="821c15a6-6e9e-4bec-8557-2a0c20b062d3" autoIncrement="false" name="titulo" nullable="1" physicalName="titulo" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL23" populated="true" UUID="821c15a6-6e9e-4bec-8557-2a0c20b062d3" autoIncrement="false" defaultValue="" name="titulo" nullable="1" physicalName="titulo" precision="30" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL24" populated="true" UUID="84a2bc5f-8287-4e00-8c5c-d05b29bd33e7" autoIncrement="false" name="genero" nullable="1" physicalName="genero" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL24" populated="true" UUID="84a2bc5f-8287-4e00-8c5c-d05b29bd33e7" autoIncrement="false" defaultValue="" name="genero" nullable="1" physicalName="genero" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL25" populated="true" UUID="15662dc7-b772-4845-9f09-59567f7afd7d" autoIncrement="false" name="data_lancamento" nullable="1" physicalName="data_lancamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
+       <column id="COL25" populated="true" UUID="15662dc7-b772-4845-9f09-59567f7afd7d" autoIncrement="false" defaultValue="" name="data_lancamento" nullable="1" physicalName="data_lancamento" precision="13" referenceCount="1" scale="0" sourceDataTypeName="date" type="91" >
         <remarks></remarks>
        </column>
        </folder>
@@ -114,22 +114,22 @@
        </index>
       </folder>
      </table>
-     <table id="TAB28" populated="true" UUID="f6abe078-d7ec-4678-8cf4-ecc498dbac0a" name="livro" objectType="TABLE" physicalName="livro" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table livro" >
+     <table id="TAB28" populated="true" UUID="f6abe078-d7ec-4678-8cf4-ecc498dbac0a" name="livro" objectType="TABLE" physicalName="livro" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table livro" >
       <remarks></remarks>
       <folder id="FOLTAB281" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL29" populated="true" UUID="2e387b5d-e5e6-469b-b46b-8885030b34ba" autoIncrement="false" name="id_livro" nullable="0" physicalName="id_livro" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL29" populated="true" UUID="2e387b5d-e5e6-469b-b46b-8885030b34ba" autoIncrement="false" defaultValue="" name="id_livro" nullable="0" physicalName="id_livro" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL30" populated="true" UUID="7c7b00a8-f4ec-453f-abea-dbc45cc7dcb0" autoIncrement="false" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL30" populated="true" UUID="7c7b00a8-f4ec-453f-abea-dbc45cc7dcb0" autoIncrement="false" defaultValue="" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL31" populated="true" UUID="7ae922b8-7e45-4798-939d-0cecf35a0f48" autoIncrement="false" name="edicao" nullable="1" physicalName="edicao" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL31" populated="true" UUID="7ae922b8-7e45-4798-939d-0cecf35a0f48" autoIncrement="false" defaultValue="" name="edicao" nullable="1" physicalName="edicao" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL32" populated="true" UUID="b9af5c5c-c7e5-48b8-960d-45caf3755888" autoIncrement="false" name="autor" nullable="1" physicalName="autor" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL32" populated="true" UUID="b9af5c5c-c7e5-48b8-960d-45caf3755888" autoIncrement="false" defaultValue="" name="autor" nullable="1" physicalName="autor" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL33" populated="true" UUID="1af1fef4-f710-4213-a584-50ff48d0302d" autoIncrement="false" name="editora" nullable="1" physicalName="editora" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL33" populated="true" UUID="1af1fef4-f710-4213-a584-50ff48d0302d" autoIncrement="false" defaultValue="" name="editora" nullable="1" physicalName="editora" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -143,13 +143,13 @@
        </index>
       </folder>
      </table>
-     <table id="TAB36" populated="true" UUID="8f21f2d9-1709-49f1-b982-cbb7a2be674e" name="programas" objectType="TABLE" physicalName="programas" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table programas" >
+     <table id="TAB36" populated="true" UUID="8f21f2d9-1709-49f1-b982-cbb7a2be674e" name="programas" objectType="TABLE" physicalName="programas" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table programas" >
       <remarks></remarks>
       <folder id="FOLTAB361" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL37" populated="true" UUID="c808bfca-a8ce-4c4d-9fe4-cde5153894ba" autoIncrement="false" name="id_prog" nullable="0" physicalName="id_prog" precision="2147483647" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL37" populated="true" UUID="c808bfca-a8ce-4c4d-9fe4-cde5153894ba" autoIncrement="false" defaultValue="" name="id_prog" nullable="0" physicalName="id_prog" precision="2147483647" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL38" populated="true" UUID="471c3e69-4e9c-4353-b704-b95b13035d67" autoIncrement="false" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL38" populated="true" UUID="471c3e69-4e9c-4353-b704-b95b13035d67" autoIncrement="false" defaultValue="" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -163,16 +163,16 @@
        </index>
       </folder>
      </table>
-     <table id="TAB41" populated="true" UUID="3d26b663-8750-40f2-9236-fa4c6256c8eb" name="serie" objectType="TABLE" physicalName="serie" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table serie" >
+     <table id="TAB41" populated="true" UUID="3d26b663-8750-40f2-9236-fa4c6256c8eb" name="serie" objectType="TABLE" physicalName="serie" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table serie" >
       <remarks></remarks>
       <folder id="FOLTAB411" populated="true" name="Columns" physicalName="Columns" type="1">
-       <column id="COL42" populated="true" UUID="deb3e9c2-936b-42fc-a754-4ebf47fc5a8d" autoIncrement="false" name="id_serie" nullable="0" physicalName="id_serie" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
+       <column id="COL42" populated="true" UUID="deb3e9c2-936b-42fc-a754-4ebf47fc5a8d" autoIncrement="false" defaultValue="" name="id_serie" nullable="0" physicalName="id_serie" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="int8" type="-5" >
         <remarks></remarks>
        </column>
-       <column id="COL43" populated="true" UUID="53276aaf-0686-46b3-b1cc-151e3c85c787" autoIncrement="false" name="produtora" nullable="1" physicalName="produtora" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL43" populated="true" UUID="53276aaf-0686-46b3-b1cc-151e3c85c787" autoIncrement="false" defaultValue="" name="produtora" nullable="1" physicalName="produtora" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
-       <column id="COL44" populated="true" UUID="fe35acc6-2a86-4cb9-a445-c9a81c030eb2" autoIncrement="false" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
+       <column id="COL44" populated="true" UUID="fe35acc6-2a86-4cb9-a445-c9a81c030eb2" autoIncrement="false" defaultValue="" name="nome" nullable="1" physicalName="nome" precision="2147483647" referenceCount="1" scale="0" sourceDataTypeName="varchar" type="12" >
         <remarks></remarks>
        </column>
        </folder>
@@ -662,7 +662,7 @@
   </database>
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
-  <table id="TAB182" populated="true" UUID="602cd235-c01e-4e39-9750-fa45247fe2da" name="programas" objectType="TABLE" physicalName="programas" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table programas" >
+  <table id="TAB182" populated="true" UUID="602cd235-c01e-4e39-9750-fa45247fe2da" name="programas" objectType="TABLE" physicalName="programas" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table programas" >
    <remarks></remarks>
    <folder id="FOLTAB1821" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL183" populated="true" UUID="1dd00424-c926-4f96-9390-48d1f755112f" autoIncrement="false" defaultValue="" name="id_prog" nullable="0" physicalName="id_prog" precision="2147483647" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL37" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -682,7 +682,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB187" populated="true" UUID="99a900bd-74d6-4b7d-82be-2a07e7d9ba47" name="downloads" objectType="TABLE" physicalName="downloads" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table downloads" >
+  <table id="TAB187" populated="true" UUID="99a900bd-74d6-4b7d-82be-2a07e7d9ba47" name="downloads" objectType="TABLE" physicalName="downloads" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table downloads" >
    <remarks></remarks>
    <folder id="FOLTAB1871" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL188" populated="true" UUID="5ea135ac-51eb-4390-aef2-ac01edf9781a" autoIncrement="false" defaultValue="" name="id_download" nullable="0" physicalName="id_download" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL13" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
@@ -714,7 +714,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB196" populated="true" UUID="77001a91-139a-4a75-8e9f-fd16f5369aec" name="data" objectType="TABLE" physicalName="data" sql-exception="java.lang.NullPointerException" >
+  <table id="TAB196" populated="true" UUID="77001a91-139a-4a75-8e9f-fd16f5369aec" name="data" objectType="TABLE" physicalName="data" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: java.lang.NullPointerException" >
    <remarks></remarks>
    <folder id="FOLTAB1961" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL197" populated="true" UUID="b3372f76-ad4c-463f-9f15-493f5233926d" autoIncrement="false" autoIncrementSequenceName="data_id_data_seq" defaultValue="" name="id_data" nullable="0" physicalName="id_data" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
@@ -743,7 +743,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB204" populated="true" UUID="69e71734-3c17-41ab-88e4-6239f80c7282" name="livro" objectType="TABLE" physicalName="livro" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table livro" >
+  <table id="TAB204" populated="true" UUID="69e71734-3c17-41ab-88e4-6239f80c7282" name="livro" objectType="TABLE" physicalName="livro" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table livro" >
    <remarks></remarks>
    <folder id="FOLTAB2041" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL205" populated="true" UUID="c79d919a-53aa-4e2f-af9c-b9b11665464d" autoIncrement="false" defaultValue="" name="id_livro" nullable="0" physicalName="id_livro" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL29" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
@@ -772,7 +772,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB212" populated="true" UUID="92d16009-049e-4161-9440-e70ccd8d6458" name="cliente" objectType="TABLE" physicalName="cliente" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table cliente" >
+  <table id="TAB212" populated="true" UUID="92d16009-049e-4161-9440-e70ccd8d6458" name="cliente" objectType="TABLE" physicalName="cliente" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table cliente" >
    <remarks></remarks>
    <folder id="FOLTAB2121" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL213" populated="true" UUID="d875ebac-93d6-48ae-a2df-5f68d016b50e" autoIncrement="false" defaultValue="" name="email" nullable="0" physicalName="email" precision="2147483647" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL4" sourceDataTypeName="varchar" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -798,7 +798,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB219" populated="true" UUID="ae6033d3-0250-4a45-b178-16373cf6783e" name="serie" objectType="TABLE" physicalName="serie" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table serie" >
+  <table id="TAB219" populated="true" UUID="ae6033d3-0250-4a45-b178-16373cf6783e" name="serie" objectType="TABLE" physicalName="serie" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table serie" >
    <remarks></remarks>
    <folder id="FOLTAB2191" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL220" populated="true" UUID="b17e3f6b-a5b1-4889-b69b-01e35c773436" autoIncrement="false" defaultValue="" name="id_serie" nullable="0" physicalName="id_serie" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL42" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
@@ -821,7 +821,7 @@
     </index>
    </folder>
   </table>
-  <table id="TAB225" populated="true" UUID="fb94c468-6c70-4033-863e-17d3c6337ddf" name="filme" objectType="TABLE" physicalName="filme" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table filme" >
+  <table id="TAB225" populated="true" UUID="fb94c468-6c70-4033-863e-17d3c6337ddf" name="filme" objectType="TABLE" physicalName="filme" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Failed to populate indices of table filme" >
    <remarks></remarks>
    <folder id="FOLTAB2251" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL226" populated="true" UUID="777ba449-6708-4975-ab8a-5832f42055fe" autoIncrement="false" defaultValue="" name="id_filme" nullable="0" physicalName="id_filme" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" source-column-ref="COL22" sourceDataTypeName="int8" type="-5" userDefinedTypeUUID="433cc8af-284d-4abb-8ef7-08ebcb34dbf1" >
@@ -983,10 +983,10 @@
   </profiles>
   <olap>
    <olap-session id="0" db-ref="ppdb">
-    <Schema id="1" name="New OLAP Schema">
+    <Schema id="1" name="public">
      <Dimension id="2" name="cliente" type="StandardDimension">
-      <Hierarchy id="3" hasAll="true" allLevelName="All" primaryKey="email">
-       <Table id="4" name="cliente"/>
+      <Hierarchy id="3" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="email">
+       <Table id="4" name="cliente" schema="public"/>
        <Level id="5" name="nome" column="nome" uniqueMembers="false">
         <Property id="6" name="New Property"/>
        </Level>
@@ -994,21 +994,21 @@
       </Hierarchy>
      </Dimension>
      <Dimension id="8" name="programas" type="StandardDimension">
-      <Hierarchy id="9" hasAll="true" allLevelName="All" primaryKey="id_prog">
-       <Table id="10" name="programas"/>
+      <Hierarchy id="9" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_prog">
+       <Table id="10" name="programas" schema="public"/>
        <Level id="11" name="nome" column="nome" uniqueMembers="false"/>
       </Hierarchy>
      </Dimension>
      <Dimension id="12" name="serie" type="StandardDimension">
-      <Hierarchy id="13" hasAll="true" allLevelName="All" primaryKey="id_serie">
-       <Table id="14" name="serie"/>
+      <Hierarchy id="13" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_serie">
+       <Table id="14" name="serie" schema="public"/>
        <Level id="15" name="nome" column="nome" uniqueMembers="true"/>
        <Level id="16" name="produtora" column="produtora" uniqueMembers="false"/>
       </Hierarchy>
      </Dimension>
      <Dimension id="17" name="downloads" type="StandardDimension">
-      <Hierarchy id="18" hasAll="true" allLevelName="All" primaryKey="id_download">
-       <Table id="19" name="downloads"/>
+      <Hierarchy id="18" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_download">
+       <Table id="19" name="downloads" schema="public"/>
        <Level id="20" name="email" column="email" uniqueMembers="false"/>
        <Level id="21" name="filme" column="id_filme" uniqueMembers="false"/>
        <Level id="22" name="prog" column="id_prog" uniqueMembers="false"/>
@@ -1017,8 +1017,8 @@
       </Hierarchy>
      </Dimension>
      <Dimension id="25" name="data" type="StandardDimension">
-      <Hierarchy id="26" hasAll="true" allLevelName="All" primaryKey="id_data">
-       <Table id="27" name="data"/>
+      <Hierarchy id="26" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_data">
+       <Table id="27" name="data" schema="public"/>
        <Level id="28" name="diasemana" column="diasemana" uniqueMembers="false"/>
        <Level id="29" name="diames" column="diames" uniqueMembers="false"/>
        <Level id="30" name="mes" column="mes" uniqueMembers="false"/>
@@ -1026,8 +1026,8 @@
       </Hierarchy>
      </Dimension>
      <Dimension id="32" name="livro" type="StandardDimension">
-      <Hierarchy id="33" hasAll="true" allLevelName="All" primaryKey="id_livro">
-       <Table id="34" name="livro"/>
+      <Hierarchy id="33" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_livro">
+       <Table id="34" name="livro" schema="public"/>
        <Level id="35" name="nome" column="nome" uniqueMembers="false"/>
        <Level id="36" name="edicao" column="edicao" uniqueMembers="false"/>
        <Level id="37" name="autor" column="autor" uniqueMembers="false"/>
@@ -1035,15 +1035,15 @@
       </Hierarchy>
      </Dimension>
      <Dimension id="39" name="filme" type="StandardDimension">
-      <Hierarchy id="40" hasAll="true" allLevelName="All" primaryKey="id_filme">
-       <Table id="41" name="filme"/>
+      <Hierarchy id="40" name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_filme">
+       <Table id="41" name="filme" schema="public"/>
        <Level id="42" name="titulo" column="titulo" uniqueMembers="false"/>
        <Level id="43" name="genero" column="genero" uniqueMembers="false"/>
        <Level id="44" name="datalancamento" column="data_lancamento" uniqueMembers="false"/>
       </Hierarchy>
      </Dimension>
      <Cube id="45" name="fato">
-      <Table id="46" name="Fato"/>
+      <Table id="46" name="Fato" schema="public"/>
       <DimensionUsage id="47" source="filme" name="filme" foreignKey="id_filme"/>
       <DimensionUsage id="48" source="cliente" name="cliente" foreignKey="email"/>
       <DimensionUsage id="49" source="programas" name="programas" foreignKey="id_prog"/>
@@ -1059,21 +1059,21 @@
   <olap-gui>
    <olap-edit-session osession-ref="0">
     <play-pen zoom="1.0" viewportX="0" viewportY="0">
-     <cube-pane id="CP0" model-ref="45" x="274" y="202"/>
-     <dimension-pane id="DP1" model-ref="2" x="26" y="91"/>
-     <dimension-pane id="DP2" model-ref="8" x="271" y="89"/>
-     <dimension-pane id="DP3" model-ref="12" x="486" y="90"/>
-     <dimension-pane id="DP4" model-ref="17" x="517" y="213"/>
-     <dimension-pane id="DP5" model-ref="25" x="517" y="402"/>
-     <dimension-pane id="DP6" model-ref="32" x="20" y="361"/>
-     <dimension-pane id="DP7" model-ref="39" x="19" y="232"/>
-     <usage-comp model-ref="53" pane1-ref="DP6" pane2-ref="CP0"/>
-     <usage-comp model-ref="52" pane1-ref="DP5" pane2-ref="CP0"/>
-     <usage-comp model-ref="51" pane1-ref="DP4" pane2-ref="CP0"/>
-     <usage-comp model-ref="50" pane1-ref="DP3" pane2-ref="CP0"/>
-     <usage-comp model-ref="49" pane1-ref="DP2" pane2-ref="CP0"/>
-     <usage-comp model-ref="48" pane1-ref="DP1" pane2-ref="CP0"/>
-     <usage-comp model-ref="47" pane1-ref="DP7" pane2-ref="CP0"/>
+     <dimension-pane id="DP0" model-ref="2" x="50" y="50"/>
+     <dimension-pane id="DP1" model-ref="25" x="166" y="50"/>
+     <dimension-pane id="DP2" model-ref="17" x="282" y="50"/>
+     <dimension-pane id="DP3" model-ref="32" x="398" y="50"/>
+     <dimension-pane id="DP4" model-ref="8" x="514" y="50"/>
+     <dimension-pane id="DP5" model-ref="12" x="630" y="50"/>
+     <dimension-pane id="DP6" model-ref="39" x="746" y="50"/>
+     <cube-pane id="CP7" model-ref="45" x="352" y="276"/>
+     <usage-comp model-ref="47" pane1-ref="DP6" pane2-ref="CP7"/>
+     <usage-comp model-ref="48" pane1-ref="DP0" pane2-ref="CP7"/>
+     <usage-comp model-ref="49" pane1-ref="DP4" pane2-ref="CP7"/>
+     <usage-comp model-ref="50" pane1-ref="DP5" pane2-ref="CP7"/>
+     <usage-comp model-ref="51" pane1-ref="DP2" pane2-ref="CP7"/>
+     <usage-comp model-ref="52" pane1-ref="DP1" pane2-ref="CP7"/>
+     <usage-comp model-ref="53" pane1-ref="DP3" pane2-ref="CP7"/>
     </play-pen>
    </olap-edit-session>
   </olap-gui>

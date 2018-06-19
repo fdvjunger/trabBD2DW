@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="public">
+ <Dimension name="cliente" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="email">
+   <Table name="cliente" schema="public"/>
+   <Level name="nome" column="nome" uniqueMembers="false">
+    <Property name="New Property"/>
+   </Level>
+   <Level name="endereco" column="endereco" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="programas" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_prog">
+   <Table name="programas" schema="public"/>
+   <Level name="nome" column="nome" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="serie" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_serie">
+   <Table name="serie" schema="public"/>
+   <Level name="nome" column="nome" uniqueMembers="true"/>
+   <Level name="produtora" column="produtora" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="downloads" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_download">
+   <Table name="downloads" schema="public"/>
+   <Level name="email" column="email" uniqueMembers="false"/>
+   <Level name="filme" column="id_filme" uniqueMembers="false"/>
+   <Level name="prog" column="id_prog" uniqueMembers="false"/>
+   <Level name="livro" column="id_livro" uniqueMembers="false"/>
+   <Level name="serie" column="id_serie" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="data" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_data">
+   <Table name="data" schema="public"/>
+   <Level name="diasemana" column="diasemana" uniqueMembers="false"/>
+   <Level name="diames" column="diames" uniqueMembers="false"/>
+   <Level name="mes" column="mes" uniqueMembers="false"/>
+   <Level name="ano" column="ano" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="livro" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_livro">
+   <Table name="livro" schema="public"/>
+   <Level name="nome" column="nome" uniqueMembers="false"/>
+   <Level name="edicao" column="edicao" uniqueMembers="false"/>
+   <Level name="autor" column="autor" uniqueMembers="false"/>
+   <Level name="editora" column="editora" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="filme" type="StandardDimension">
+  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_filme">
+   <Table name="filme" schema="public"/>
+   <Level name="titulo" column="titulo" uniqueMembers="false"/>
+   <Level name="genero" column="genero" uniqueMembers="false"/>
+   <Level name="datalancamento" column="data_lancamento" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Cube name="fato">
+  <Table name="Fato" schema="public"/>
+  <DimensionUsage source="filme" name="filme" foreignKey="id_filme"/>
+  <DimensionUsage source="cliente" name="cliente" foreignKey="email"/>
+  <DimensionUsage source="programas" name="programas" foreignKey="id_prog"/>
+  <DimensionUsage source="serie" name="serie" foreignKey="id_serie"/>
+  <DimensionUsage source="downloads" name="downloads" foreignKey="id_download"/>
+  <DimensionUsage source="data" name="data" foreignKey="id_data"/>
+  <DimensionUsage source="livro" name="livro" foreignKey="id_livro"/>
+  <Measure name="totaldown" column="total downloads" aggregator="sum"/>
+ </Cube>
+</Schema>

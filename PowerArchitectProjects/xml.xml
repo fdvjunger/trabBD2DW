@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="New OLAP Schema">
+ <Dimension name="Cliente" type="StandardDimension">
+  <Hierarchy name="email" hasAll="true" allLevelName="All" primaryKey="email" caption="4">
+   <Table name="Cliente"/>
+   <Level name="nome" column="nome" uniqueMembers="false">
+    <Property name="Nome" column="nome"/>
+   </Level>
+   <Level name="endereco" column="endereco" uniqueMembers="false">
+    <Property name="Endereco" column="endereco"/>
+   </Level>
+   <Level name="ip" column="ip" uniqueMembers="false">
+    <Property name="Ip" column="ip"/>
+   </Level>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="Serie" type="StandardDimension" caption="1">
+  <Hierarchy name="id_serie" hasAll="true" allLevelName="All" primaryKey="id_serie">
+   <Table name="serie"/>
+   <Level name="produtora" column="produtora" uniqueMembers="false">
+    <Property name="Produtora" column="produtora"/>
+   </Level>
+   <Level name="nome" column="nome" uniqueMembers="false">
+    <Property name="Nome" column="nome"/>
+   </Level>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="Filme" type="StandardDimension">
+  <Hierarchy name="id_filme" hasAll="true" allLevelName="All" primaryKey="id_filme" caption="2">
+   <Table name="Filme"/>
+   <Level name="nome" column="nome" uniqueMembers="false">
+    <Property name="Nome" column="nome"/>
+   </Level>
+   <Level name="genero" column="genero" uniqueMembers="false">
+    <Property name="Genero" column="genero"/>
+   </Level>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="Programas" type="StandardDimension">
+  <Hierarchy name="id_prog" hasAll="true" allLevelName="All" primaryKey="id_prog" caption="3">
+   <Table name="Programas"/>
+   <Level name="nome" column="nome" uniqueMembers="false">
+    <Property name="Nome" column="nome"/>
+   </Level>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="Livro" type="StandardDimension">
+  <Hierarchy name="id_livro" hasAll="true" allLevelName="All" primaryKey="id_livro" caption="5">
+   <Table name="Livro"/>
+   <Level name="nome" column="nome" uniqueMembers="false">
+    <Property name="Nome" column="nome"/>
+   </Level>
+   <Level name="edicao" column="edicão" uniqueMembers="false">
+    <Property name="Edicão" column="edicão"/>
+   </Level>
+   <Level name="autor" column="autor" uniqueMembers="false">
+    <Property name="Autor" column="autor"/>
+   </Level>
+   <Level name="editora" column="editora" uniqueMembers="false">
+    <Property name="Editora" column="editora"/>
+   </Level>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="Data" type="StandardDimension">
+  <Hierarchy name="id" hasAll="true" allLevelName="All" primaryKey="id_download" caption="6">
+   <Table name="Data"/>
+   <Level name="diasemanan" column="id_download" uniqueMembers="false">
+    <Property name="Diasemanan" column="diasemanan"/>
+   </Level>
+   <Level name="diames" column="diames" uniqueMembers="false">
+    <Property name="Diames" column="diames"/>
+   </Level>
+   <Level name="mes" column="mes" uniqueMembers="true">
+    <Property name="Mes" column="mes"/>
+   </Level>
+   <Level name="ano" column="ano" uniqueMembers="false">
+    <Property name="Ano" column="ano"/>
+   </Level>
+   <Level name="diasemana" column="diasemana" uniqueMembers="false">
+    <Property name="Diasemana" column="diasemana"/>
+   </Level>
+  </Hierarchy>
+ </Dimension>
+ <Cube name="Downloads">
+  <Table name="Downloads"/>
+  <DimensionUsage source="Filme" name="Filme" caption="2" foreignKey="id_serie"/>
+  <DimensionUsage source="Programas" name="Programas" caption="3" foreignKey="id_prog"/>
+  <DimensionUsage source="Cliente" name="Cliente" caption="4" foreignKey="email"/>
+  <DimensionUsage source="Livro" name="Livro" caption="5" foreignKey="id_livro"/>
+  <DimensionUsage source="Data" name="Data" caption="6" foreignKey="id_download"/>
+  <DimensionUsage source="Serie" name="Serie" caption="1" foreignKey="id_serie"/>
+  <Measure name="programas" column="id_prog" aggregator="sum"/>
+  <Measure name="livors" column="id_livro" aggregator="sum"/>
+  <Measure name="filmes" column="id_filme" aggregator="sum"/>
+  <Measure name="series" column="id_serie" aggregator="sum"/>
+  <Measure name="clientes" column="email" aggregator="sum"/>
+  <Measure name="datas" column="id_download" aggregator="sum"/>
+ </Cube>
+</Schema>
