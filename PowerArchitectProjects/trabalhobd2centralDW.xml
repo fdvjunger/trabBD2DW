@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Schema name="public">
+<Schema name="central">
  <Dimension name="cliente" type="StandardDimension">
-  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="email">
-   <Table name="cliente" schema="public"/>
+  <Hierarchy name="cliente" hasAll="true" allLevelName="All" primaryKey="email">
+   <Table name="cliente"/>
    <Level name="nome" column="nome" uniqueMembers="false">
     <Property name="New Property"/>
    </Level>
@@ -23,8 +23,8 @@
   </Hierarchy>
  </Dimension>
  <Dimension name="downloads" type="StandardDimension">
-  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_download">
-   <Table name="downloads" schema="public"/>
+  <Hierarchy name="downloads" hasAll="true" allLevelName="All" primaryKey="id_download">
+   <Table name="downloads"/>
    <Level name="email" column="email" uniqueMembers="false"/>
    <Level name="filme" column="id_filme" uniqueMembers="false"/>
    <Level name="prog" column="id_prog" uniqueMembers="false"/>
@@ -33,8 +33,8 @@
   </Hierarchy>
  </Dimension>
  <Dimension name="data" type="StandardDimension">
-  <Hierarchy name="New Hierarchy" hasAll="true" allLevelName="All" primaryKey="id_data">
-   <Table name="data" schema="public"/>
+  <Hierarchy name="tempo" hasAll="true" allLevelName="All" primaryKey="id_data">
+   <Table name="data"/>
    <Level name="diasemana" column="diasemana" uniqueMembers="false"/>
    <Level name="diames" column="diames" uniqueMembers="false"/>
    <Level name="mes" column="mes" uniqueMembers="false"/>
@@ -67,6 +67,12 @@
   <DimensionUsage source="downloads" name="downloads" foreignKey="id_download"/>
   <DimensionUsage source="data" name="data" foreignKey="id_data"/>
   <DimensionUsage source="livro" name="livro" foreignKey="id_livro"/>
-  <Measure name="totaldown" column="total downloads" aggregator="sum"/>
+  <Measure name="totaldown" aggregator="sum">
+   <MeasureExpression>
+    <SQL dialect="generic">
+     
+    </SQL>
+   </MeasureExpression>
+  </Measure>
  </Cube>
 </Schema>

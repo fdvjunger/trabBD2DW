@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="New OLAP Schema">
+ <Dimension name="New Dimension 1" type="StandardDimension">
+  <Hierarchy hasAll="true" allLevelName="All" primaryKey="email">
+   <Table name="cliente"/>
+   <Level name="New Level 1" column="nome" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="New Dimension 2" type="StandardDimension">
+  <Hierarchy hasAll="true" allLevelName="All" primaryKey="id_download">
+   <Table name="data"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="New Dimension 3" type="StandardDimension">
+  <Hierarchy hasAll="true" allLevelName="All" primaryKey="id_filme">
+   <Table name="filme"/>
+   <Level name="New Level 1" column="genero" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="New Dimension 4" type="StandardDimension">
+  <Hierarchy name="New Hierarchy 1" hasAll="true" allLevelName="All" primaryKey="id_livro">
+   <Table name="livro"/>
+   <Level name="New Level 1" column="autor" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="New Dimension 5" type="StandardDimension">
+  <Hierarchy name="New Hierarchy 1" hasAll="true" allLevelName="All" primaryKey="id_serie">
+   <Table name="serie"/>
+   <Level name="New Level 1" column="produtora" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Dimension name="New Dimension 6" type="StandardDimension">
+  <Hierarchy hasAll="true" allLevelName="All" primaryKey="id_programa">
+   <Table name="programas"/>
+   <Level name="New Level 1" column="nome" uniqueMembers="false"/>
+  </Hierarchy>
+ </Dimension>
+ <Cube name="fato">
+  <Table name="downloads"/>
+  <DimensionUsage source="New Dimension 1" name="New Dimension 1" foreignKey="email"/>
+  <DimensionUsage source="New Dimension 2" name="New Dimension 2" foreignKey="id_download"/>
+  <DimensionUsage source="New Dimension 3" name="New Dimension 3" foreignKey="id_filme"/>
+  <DimensionUsage source="New Dimension 4" name="New Dimension 4" foreignKey="id_livro"/>
+  <DimensionUsage source="New Dimension 5" name="New Dimension 5" foreignKey="id_serie"/>
+  <DimensionUsage source="New Dimension 6" name="New Dimension 6" foreignKey="id_prog"/>
+  <Measure name="qtd_clientes" column="email" aggregator="sum"/>
+  <Measure name="qtd_prog" column="id_prog" aggregator="sum"/>
+ </Cube>
+</Schema>
